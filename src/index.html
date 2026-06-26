@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twenty-One</title>
+  <link rel="stylesheet" href="21.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script type="module" src="21.js"></script>
+</head>
+<body>
+  <div id="page-scroll-wrapper">
+    <div id="game">
+      <div id="header">
+        <div id="welcome-message">
+          <div id="wmessage">
+            Welcome, esteemed traveller! I am Archmage Volans. Tell me, are you feeling blessed by Lady Fortune today?
+            If so, have a try at outsmarting my arcane automaton, Cassius, at a simple game of Twenty-One!
+            Should you succeed, there is a treasure waiting for you. Should you fail...
+          </div>
+          <p id="result" aria-live="assertive"></p>
+        </div>
+        <img src="archmage.png" alt="Archmage Volans">
+      </div>
+
+      <div id="card-table">
+        <div id="cassius" aria-label="Dealer hand">
+          <div class="score-badge">Cassius' score: <span aria-live="polite">0</span></div>
+          <div id="casscards"></div>
+        </div>
+        <div id="you" aria-label="Player hand">
+          <div class="score-badge">Your score: <span aria-live="polite">0</span></div>
+          <div id="yourcards"></div>
+        </div>
+      </div>
+
+      <div id="click">
+        <button id="hit" aria-label="Hit — draw another card">Hit</button>
+        <button id="stand" aria-label="Stand — end your turn">Stand</button>
+        <button id="replay" aria-label="Replay — start a new round">Replay</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="magic-effect"></div>
+
+  <script>
+    const body = document.body, sparks = 220;
+    for (let i = 0; i < sparks; i++) {
+      const top = Math.random() * 95, left = Math.random() * 100, nearMage = top < 30 && left > 70;
+      const s = document.createElement('div');
+      s.className = 'spark';
+      s.style.cssText = `
+        top:${top}vh;
+        left:${nearMage ? (Math.random() > .5 ? 80 + Math.random() * 10 : 50 + Math.random() * 20) : left}vw;
+        background:${nearMage ? '#7c4dff' : '#ab47bc'};
+        animation-delay:${Math.random() * 5}s;
+        animation-duration:${Math.random() * 3 + 2}s;`;
+      body.appendChild(s);
+    }
+  </script>
+</body>
+</html>
