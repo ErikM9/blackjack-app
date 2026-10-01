@@ -1,0 +1,11 @@
+{
+  "src": "tests/e2e/**/*.e2e.js",
+  "appCommand": "http-server src -p 3100 -c-1 -s",
+  "appInitDelay": 4000,
+  "assertionTimeout": 5000,
+  "screenshots": {
+    "path": "tests/e2e/screenshots",
+    "takeOnFails": true,
+    "fullPage": true
+  }
+}

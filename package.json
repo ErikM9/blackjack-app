@@ -1,0 +1,28 @@
+{
+  "name": "twenty-one",
+  "version": "1.0.0",
+  "description": "Blackjack game with jQuery animations",
+  "type": "module",
+  "scripts": {
+    "serve": "npx http-server src -p 3000 -c-1",
+    "test": "qunit \"tests/unit/**/*.test.js\"",
+    "test:coverage": "c8 qunit \"tests/unit/**/*.test.js\"",
+    "test:e2e": "testcafe chrome",
+    "test:e2e:headless": "testcafe chrome:headless",
+    "test:e2e:all": "testcafe chrome,firefox"
+  },
+  "devDependencies": {
+    "axe-core": "^4.13.0",
+    "c8": "^12.0.0",
+    "http-server": "^14.1.1",
+    "qunit": "^2.21.0",
+    "sinon": "^22.1.0",
+    "testcafe": "^3.6.0"
+  },
+  "keywords": [
+    "blackjack",
+    "game",
+    "jquery",
+    "testing"
+  ]
+}
